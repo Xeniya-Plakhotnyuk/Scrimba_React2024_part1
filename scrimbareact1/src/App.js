@@ -1,13 +1,16 @@
 import "./App.css"
-import Main from "./components/Main";
 import Navbar from "./components/Navbar";
+import HeroPage from "./components/Hero";
+import Card from "./components/Card";
+
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Main />
+      {/* <HeroPage /> */}
+      <Card />
           </div>
   );
 }
