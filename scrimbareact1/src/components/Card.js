@@ -1,19 +1,20 @@
-import katy from "../images/katie-zaferes.png";
+
 import star from "../images/star.png";
+// import katie from "./katie-zaferes.png";
 
 
-function Card(){
+function Card(props){
     return(
         <div className="card">
-        <img src={katy} width="200px" alt="main card" className ="card--image" />
+        <img src={`../images/${props.img}`} className="card--image"  width="200px" alt="main card" />
         <div className="card--stats">
             <img src={star} alt="star" className="card--star"/>
-            <span>5.0</span>
-            <span className ="gray">(6) • </span>
-            <span className ="gray">USA</span>
+            <span>{props.raiting}</span>
+            <span className ="gray">({props.count}) • </span>
+            <span className ="gray">{props.country}</span>
                     </div>
-        <h2>Life lessons</h2>
-        <p><span className = "bold">From $136</span> / person</p>
+        <h2>{props.title}</h2>
+        <p><span className = "bold">From $ {props.price}</span> / person</p>
         </div>
     )
 }
