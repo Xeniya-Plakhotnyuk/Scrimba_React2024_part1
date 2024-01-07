@@ -6,7 +6,7 @@ import star from "../images/star.png";
 function Card(props){
     return(
         <div className="card">
-        <img src={`../images/${props.img}`} className="card--image"  width="200px" alt="main card" />
+         <img src={`../images/${props.img}`} className="card--image" alt="main pic" />
         <div className="card--stats">
             <img src={star} alt="star" className="card--star"/>
             <span>{props.raiting}</span>
