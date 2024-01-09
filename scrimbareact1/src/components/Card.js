@@ -1,22 +1,33 @@
 
 import star from "../images/star.png";
-// import katie from "./katie-zaferes.png";
+import data from "./data";
 
 
-function Card(props){
-    return(
-        <div className="card">
-         <img src={`../images/${props.img}`} className="card--image" alt="main pic" />
-        <div className="card--stats">
-            <img src={star} alt="star" className="card--star"/>
-            <span>{props.raiting}</span>
-            <span className ="gray">({props.count}) • </span>
-            <span className ="gray">{props.country}</span>
-                    </div>
-        <h2>{props.title}</h2>
-        <p><span className = "bold">From $ {props.price}</span> / person</p>
-        </div>
-    )
+const Card = () => {
+
+return(
+<div>
+{data.map(data => (
+<div className = "card">
+<h2>{data.title}</h2>
+<img src={data.coverImg} alt="card" />
+{/* <p>{data.description}</p> */}
+<p>${data.price} / per hour</p>
+<p> <img src = {star} alt="star"/> {data.stats.raiting} {data.stats.reviewCount}</p>
+<p>{data.location}</p>
+<p>{data.openSpots} spots left</p>
+
+</div>
+
+)
+
+) }
+
+</div>
+
+)
+
+
 }
 
-export default Card;
+   export default Card;
