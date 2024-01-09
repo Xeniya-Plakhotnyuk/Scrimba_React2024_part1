@@ -6,15 +6,24 @@ import data from "./data";
 const Card = () => {
 
 return(
-<div>
+<div className="card" 
+key={data.id}
+>
 {data.map(data => (
+    
 <div className = "card">
 <h2>{data.title}</h2>
-<img src={data.coverImg} alt="card" />
+<img src={data.coverImg} alt="card" className="card--image" />
 {/* <p>{data.description}</p> */}
-<p>${data.price} / per hour</p>
-<p> <img src = {star} alt="star"/> {data.stats.raiting} {data.stats.reviewCount}</p>
-<p>{data.location}</p>
+
+<div className="card--stats">
+                <img src={star} className="card--star" alt="star" />
+                <span>{data.stats.raiting}</span>
+                <span className="gray">({data.stats.reviewCount}) • </span>
+                <span className="gray">{data.location}</span>
+            </div>
+<p> <span className="bold">${data.price} </span>/ per hour</p>
+
 <p>{data.openSpots} spots left</p>
 
 </div>
@@ -25,9 +34,6 @@ return(
 
 </div>
 
-)
-
-
-}
+)}
 
    export default Card;
